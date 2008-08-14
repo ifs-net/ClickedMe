@@ -2,62 +2,37 @@
 
 <!--[include file="clickedme_user_header.htm"]-->
 
+<h3><!--[pnml name="_PNCLICKEDMELASTVISITSOFYOURPROFILEPAGE"]--></h3>
 
-<!--[pnusergetvar name="uid" assign="uid"]-->
-
-<h1><!--[pnml name="_PNCLICKEDMELASTVISITSOFYOURPROFILEPAGE"]--></h1>
-<!--[pnml name="_PNCLICKEDMETHOSEHAVEVISITEDYOURPROFILE"]-->
-<!--[pnmodapifunc modname="ClickedMe" type="user" func="getViewers" uid=$uid amount=5 assign="viewers"]-->
-<table>
-<tr>
-<!--[foreach from=$viewers item=viewer]-->
-    <th>
-	<!--[pnusergetvar name="uname" uid=$viewer.uid assign="uname"]-->
-	<a href="<!--[pnmodurl modname="Profile" func="view" uid=$viewer.uid]-->"><!--[$uname]--></a>
-    </th>
+<div id="clickedme_history" class="pn-floatbox">
+<!--[foreach from=$visitors item="member"]-->
+	<!--[pnusergetvar uid=$member.uid name="_YOURAVATAR" assign="avatar"]-->
+	<dl class="profilebox">
+	  <!--[if $avatar eq '' or $avatar eq 'blank.gif']-->
+	  <dd><!--[pnimg modname="ClickedMe" src="avatar_male.gif" width="30" class="avatar"]--></dd>
+	  <!--[else]-->
+	  <dd><img src="images/avatar/<!--[$avatar|pnvarprepfordisplay]-->" class="avatar" width="50" /></dd>
+	  <!--[/if]-->
+	  <dt><!--[$member.uname|userprofilelink]--></dt>
+	</dl>
 <!--[/foreach]-->
-</tr>
-<tr>
-<!--[foreach from=$viewers item=viewer]-->
-    <td>
-	<!--[pnusergetvar name="user_avatar" uid=$viewer.uid assign="avatar"]-->
-	<!--[if $avatar ne "blank.gif"]-->
-        <a href="<!--[pnmodurl modname="Profile" func="view" uid=$viewer.uid]-->"><img src="images/avatar/<!--[$avatar]-->"></a>
-	<!--[else]-->
-	&nbsp;
-        <!--[/if]-->
-    </td>
-<!--[/foreach]-->
-</tr>
-</table>
+</div>
 
-<br /><br />
 
-<h1><!--[pnml name="_PNCLICKEDMEHISTORY"]--></h1>
-<!--[pnml name="_PNCLICKEDMEYOURLASTLOGGEDVISITS"]-->
-<!--[pnmodapifunc modname="ClickedMe" type="user" func="getHistory" uid=$uid amount=5 assign="viewers"]-->
-<table>
-<tr>
-<!--[foreach from=$viewers item=viewer]-->
-    <th>
-	<!--[pnusergetvar name="uname" uid=$viewer.clicked_uid assign="uname"]-->
-    	<a href="<!--[pnmodurl modname="Profile" func="view" uid=$viewer.clicked_uid]-->"><!--[$uname]--></a>
-    </th>
-<!--[/foreach]-->
-</tr>
-<tr>
-<!--[foreach from=$viewers item=viewer]-->
-    <td>
-	<!--[pnusergetvar name="user_avatar" uid=$viewer.clicked_uid assign="avatar"]-->
-	<!--[if $avatar ne "blank.gif"]-->
-        <a href="<!--[$pnmodurl modname="Profile" func="view" uid=$viewer.clicked_uid]-->"><img src="images/avatar/<!--[$avatar]-->"></a>
-	<!--[else]-->
-	&nbsp;
-        <!--[/if]-->
-    </td>
-<!--[/foreach]-->
-</tr>
-</table>
+<h3><!--[pnml name="_PNCLICKEDMEYOURLASTLOGGEDVISITS"]--></h3>
 
+<div id="clickedme_history" class="pn-floatbox">
+<!--[foreach from=$history item="member"]-->
+	<!--[pnusergetvar uid=$member.clicked_uid name="_YOURAVATAR" assign="avatar"]-->
+	<dl class="profilebox">
+	  <!--[if $avatar eq '' or $avatar eq 'blank.gif']-->
+	  <dd><!--[pnimg modname="ClickedMe" src="avatar_male.gif" width="30" class="avatar"]--></dd>
+	  <!--[else]-->
+	  <dd><img src="images/avatar/<!--[$avatar|pnvarprepfordisplay]-->" class="avatar" width="50" /></dd>
+	  <!--[/if]-->
+	  <dt><!--[$member.uname|userprofilelink]--></dt>
+	</dl>
+<!--[/foreach]-->
+</div>
 
 <!--[include file="clickedme_user_footer.htm"]-->

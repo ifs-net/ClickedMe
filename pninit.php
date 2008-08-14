@@ -1,4 +1,12 @@
 <?php
+/**
+* @package      ClickedMe
+* @version      $Id$
+* @author       Florian Schießl
+* @link         http://www.ifs-net.de
+* @copyright    Copyright (C) 2008
+* @license      http://www.gnu.org/copyleft/gpl.html GNU General Public License
+*/
 
 /**
  * initialise the ClickedMe module
@@ -32,7 +40,6 @@ function ClickedMe_upgrade($oldversion)
     return true;
 }
 		
-
 /**
  * delete the ClickedMe module
  *
@@ -47,6 +54,4 @@ function ClickedMe_delete()
     // Deletion successful
     return true;
 }
-
-
 ?>

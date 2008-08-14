@@ -1,12 +1,11 @@
-<p><small>
-<!--[if $items eq 0]-->
-    <!--[pnml name="_CLICKEDMENOBODYCLICKEDYOU"]-->.
+<!--[pnpageaddvar name="stylesheet" value="modules/ClickedMe/pnstyle/style.css"]-->
+
+<!--[if $visitors|@count eq 0]-->
+	    <!--[pnml name="_CLICKEDMENOBODYCLICKEDYOU"]-->.
 <!--[else]-->
-    <!--[pnml name="_CLICKEDMETHESECLICKEDYOU"]-->:<br />
-    <!--[foreach from=$items item=item]-->
-    <a href="<!--[pnmodurl modname="Profile" func="view" uid=$item.uid]-->"><!--[pnusergetvar name="uname" uid=$item.uid]--></a>, 
-    <!--[/foreach]-->
-    <!--[pnml name="_CLICKEDMEVISITTHEM"]-->
+	<ul>
+	<!--[foreach from=$visitors item="user"]-->
+		&#187; <!--[$user.uname|userprofilelink]--><br />
+	<!--[/foreach]-->
+	</ul>
 <!--[/if]-->
-</small>
-</p>

@@ -1,4 +1,13 @@
 <?php
+/**
+* @package      ClickedMe
+* @version      $Id$
+* @author       Florian Schießl
+* @link         http://www.ifs-net.de
+* @copyright    Copyright (C) 2008
+* @license      http://www.gnu.org/copyleft/gpl.html GNU General Public License
+*/
+
 /*
  * getSettings
  *
@@ -107,23 +116,25 @@ function clickedme_userapi_addClick($args) {
  */
 function clickedme_userapi_getViewers($args)
 {
-
-    $uid = (int)$args['uid'];
+	$amount = (int)$args['amount'];
+    $uid 	= (int)$args['uid'];
     if (!($uid>1)) return;
     
     // Database information
-    $dbconn =& pnDBGetConn(true);
-    $pntable =pnDBGetTables();
-    $table = $pntable['clickedme'];
-    $column = &$pntable['clickedme_column'];
+    $tables =& pnDBGetTables();
+    $column = $tables['clickedme_column'];
+
+	// add join to retrieve user name information
+	$joinInfo[] = array (	'join_table'          =>  'users',			// table for the join
+							'join_field'          =>  'uname',			// field in the join table that should be in the result with
+                         	'object_field_name'   =>  'uname',			// ...this name for the new column
+                         	'compare_field_table' =>  'uid',			// regular table column that should be equal to
+                         	'compare_field_join'  =>  'uid');			// ...the table in join_table
 
     // Get the data from the database
-    $where = "WHERE ".$column['clicked_uid']." = ".$uid;
-    $orderby = "ORDER by ".$column['timestamp']." DESC";
-    $limitoffset = -1;
-    $limitnumrows = $args['amount'];
-	    
-    return DBUtil::selectObjectArray('clickedme',$where,$orderby,$limitoffset,$limitnumrows);
+    $where 		= "WHERE tbl.".$column['clicked_uid']." = ".$uid;
+    $orderby 	= "ORDER by tbl.".$column['timestamp']." DESC";
+    return DBUtil::selectExpandedObjectArray('clickedme',$joinInfo,$where,$orderby,-1,$amount);
 }
 
 /**
@@ -135,24 +146,25 @@ function clickedme_userapi_getViewers($args)
  */
 function clickedme_userapi_getHistory($args)
 {
-
-    $uid = (int)$args['uid'];
+	$amount = (int)$args['amount'];
+    $uid 	= (int)$args['uid'];
     if (!($uid>1)) return;
     
     // Database information
-    $dbconn =& pnDBGetConn(true);
-    $pntable =pnDBGetTables();
-    $table = $pntable['clickedme'];
-    $column = &$pntable['clickedme_column'];
+    $tables =& pnDBGetTables();
+    $column = $tables['clickedme_column'];
+
+	// add join to retrieve user name information
+	$joinInfo[] = array (	'join_table'          =>  'users',			// table for the join
+							'join_field'          =>  'uname',			// field in the join table that should be in the result with
+                         	'object_field_name'   =>  'uname',			// ...this name for the new column
+                         	'compare_field_table' =>  'clicked_uid',			// regular table column that should be equal to
+                         	'compare_field_join'  =>  'uid');			// ...the table in join_table
 
     // Get the data from the database
-    $where = "WHERE ".$column['uid']." = ".$uid;
-    $orderby = "ORDER by ".$column['timestamp']." DESC";
-    $limitoffset = -1;
-    $limitnumrows = $args['amount'];
-	    
-    $result = DBUtil::selectObjectArray('clickedme',$where,$orderby,$limitoffset,$limitnumrows);
-    return $result;
+    $where 		= "WHERE tbl.".$column['uid']." = ".$uid;
+    $orderby 	= "ORDER by tbl.".$column['timestamp']." DESC";
+    return DBUtil::selectExpandedObjectArray('clickedme',$joinInfo,$where,$orderby,-1,$amount);
 }
 
 /**
