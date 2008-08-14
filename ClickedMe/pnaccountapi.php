@@ -1,5 +1,14 @@
 <?php
 /**
+* @package      ClickedMe
+* @version      $Id$
+* @author       Florian Schießl
+* @link         http://www.ifs-net.de
+* @copyright    Copyright (C) 2008
+* @license      http://www.gnu.org/copyleft/gpl.html GNU General Public License
+*/
+
+/**
  * Return an array of items that should be shown on the user's settings pannel
  *
  * @param	uname	string
