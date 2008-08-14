@@ -1,0 +1,12 @@
+<p><small>
+<!--[if $items eq 0]-->
+    <!--[pnml name="_CLICKEDMENOBODYCLICKEDYOU"]-->.
+<!--[else]-->
+    <!--[pnml name="_CLICKEDMETHESECLICKEDYOU"]-->:<br />
+    <!--[foreach from=$items item=item]-->
+    <a href="<!--[pnmodurl modname="Profile" func="view" uid=$item.uid]-->"><!--[pnusergetvar name="uname" uid=$item.uid]--></a>, 
+    <!--[/foreach]-->
+    <!--[pnml name="_CLICKEDMEVISITTHEM"]-->
+<!--[/if]-->
+</small>
+</p>
