@@ -1,0 +1,63 @@
+<strong><!--[pngetstatusmsg|pnvarprephtmldisplay]--></strong>
+
+<!--[include file="clickedme_user_header.htm"]-->
+
+
+<!--[pnusergetvar name="uid" assign="uid"]-->
+
+<h1><!--[pnml name="_PNCLICKEDMELASTVISITSOFYOURPROFILEPAGE"]--></h1>
+<!--[pnml name="_PNCLICKEDMETHOSEHAVEVISITEDYOURPROFILE"]-->
+<!--[pnmodapifunc modname="ClickedMe" type="user" func="getViewers" uid=$uid amount=5 assign="viewers"]-->
+<table>
+<tr>
+<!--[foreach from=$viewers item=viewer]-->
+    <th>
+	<!--[pnusergetvar name="uname" uid=$viewer.uid assign="uname"]-->
+	<a href="<!--[pnmodurl modname="Profile" func="view" uid=$viewer.uid]-->"><!--[$uname]--></a>
+    </th>
+<!--[/foreach]-->
+</tr>
+<tr>
+<!--[foreach from=$viewers item=viewer]-->
+    <td>
+	<!--[pnusergetvar name="user_avatar" uid=$viewer.uid assign="avatar"]-->
+	<!--[if $avatar ne "blank.gif"]-->
+        <a href="<!--[pnmodurl modname="Profile" func="view" uid=$viewer.uid]-->"><img src="images/avatar/<!--[$avatar]-->"></a>
+	<!--[else]-->
+	&nbsp;
+        <!--[/if]-->
+    </td>
+<!--[/foreach]-->
+</tr>
+</table>
+
+<br /><br />
+
+<h1><!--[pnml name="_PNCLICKEDMEHISTORY"]--></h1>
+<!--[pnml name="_PNCLICKEDMEYOURLASTLOGGEDVISITS"]-->
+<!--[pnmodapifunc modname="ClickedMe" type="user" func="getHistory" uid=$uid amount=5 assign="viewers"]-->
+<table>
+<tr>
+<!--[foreach from=$viewers item=viewer]-->
+    <th>
+	<!--[pnusergetvar name="uname" uid=$viewer.clicked_uid assign="uname"]-->
+    	<a href="<!--[pnmodurl modname="Profile" func="view" uid=$viewer.clicked_uid]-->"><!--[$uname]--></a>
+    </th>
+<!--[/foreach]-->
+</tr>
+<tr>
+<!--[foreach from=$viewers item=viewer]-->
+    <td>
+	<!--[pnusergetvar name="user_avatar" uid=$viewer.clicked_uid assign="avatar"]-->
+	<!--[if $avatar ne "blank.gif"]-->
+        <a href="<!--[$pnmodurl modname="Profile" func="view" uid=$viewer.clicked_uid]-->"><img src="images/avatar/<!--[$avatar]-->"></a>
+	<!--[else]-->
+	&nbsp;
+        <!--[/if]-->
+    </td>
+<!--[/foreach]-->
+</tr>
+</table>
+
+
+<!--[include file="clickedme_user_footer.htm"]-->

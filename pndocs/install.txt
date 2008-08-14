@@ -1,0 +1,42 @@
+pnClickedMe:
+============
+
+1. init & activate it in the module administration
+2. let the module that shows the userprofile know 
+   that pnClickedMe is now installed and should be used:
+   
+   a) Use this module with the 0.8 pnRender based Profile module
+   
+   Please add the following line to the file
+   "system/Profile/templates/Profile_user_view.htm"
+   
+   <!--[pnmodapifunc modname="ClickedMe" type="user" func="addClick" clicked_uid=$userinfo.uid]-->
+
+   That's all. Have a lot of fun!
+
+   b) pnRender based user profile modules:
+   
+   Just add the following line to the template that 
+   shows the details of the clicked user:
+   
+   <!--[pnmodapifunc modname="ClickedMe" type="user" func="addClick" clicked_uid=$uid]-->
+   
+   $uid is just an example - I don't know which variable 
+   manages the user's uid-variable.
+   If the username is given as argument / variable called "uname" 
+   for example you would have to add the following line instead 
+   of the line above:
+   
+   <!--[pnmodapifunc modname="ClickedMe" type="user" func="addClick" clicked_uname=$uname]-->
+
+3. Install the block at your site. If there are any clicks 
+   (without own clicks on the own profile) for your profile the 
+   block will be displayed. Otherwise the block will not be shown!
+
+
+4. OPTIONAL: Show the average of clicks a user has per day
+
+   Just include the follwing code in the place of your template 
+   where you want to have this value shown:
+   
+   This profile page is shown <!--[pnmodapifunc modname="ClickedMe" type="user" func="getAvg" uid=$userinfo.uid]--> times per day (avg).
