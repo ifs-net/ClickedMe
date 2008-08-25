@@ -1,5 +1,14 @@
 Changelog for the clickedme module
 
+SVN:
+====
+- added live update check
+
+1.0
+===
+- full zikula compatible
+- removed bug if users do not exist any more
+
 new in 0.50:
 ============
 - The module is now a PostNuke 0.8 module. You now need 
