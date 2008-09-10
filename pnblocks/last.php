@@ -55,6 +55,10 @@ function ClickedMe_lastblock_display($blockinfo)
 
 	// get render instance
 	$render = pnRender::getInstance('ClickedMe');
+	
+	// activate caching
+    $render->caching = true;
+    $render->cache_lifetime = 120; // cache for 2 minutes
 
     // Assign data
     $uid = pnUserGetVar('uid');
