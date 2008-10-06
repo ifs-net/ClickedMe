@@ -1,0 +1,20 @@
+<strong><!--[pngetstatusmsg|pnvarprephtmldisplay]--></strong>
+
+<!--[include file="clickedme_user_header.htm"]-->
+
+
+<h1><!--[pnml name="_PNCLICKEDMEUSERSETTINGS"]--></h1>
+<!--[versioncheck module="ClickedMe"]-->
+<!--[pnml name="_PNCLICKEDMEPRIVACYSETTINGS"]--><br /><br />
+
+<form method="post" action="<!--[pnmodurl modname="ClickedMe" type="user" func="main"]-->">
+<input type="hidden" value="update" name="action" />
+<input type="hidden" value="<!--[pnsecgenauthkey module="ClickedMe"]-->" name="authid" />
+<input type="checkbox" name="anonymous" value="yes" <!--[if $privacy]--> checked="checked" <!--[/if]-->/> <!--[pnml name="_PNCLICKEDMEIWANTTOBEANONYMOUS"]--><br /><br />
+
+<!--[pnml name="_PNCLICKEDMEMOREINFORMATION"]--><br /><br />
+
+<input type="submit" value="<!--[pnml name="_PNCLICKEDMESUBMIT"]-->" />
+</form>
+
+<!--[include file="clickedme_user_footer.htm"]-->
