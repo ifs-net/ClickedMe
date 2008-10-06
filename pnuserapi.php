@@ -117,24 +117,23 @@ function clickedme_userapi_addClick($args) {
 function clickedme_userapi_getViewers($args)
 {
 	$amount = (int)$args['amount'];
-    $uid 	= (int)$args['uid'];
-    if (!($uid>1)) return;
+	$uid  = (int)$args['uid'];
+	if (!($uid>1)) return;
     
     // Database information
-    $tables =& pnDBGetTables();
+	$tables =& pnDBGetTables();
     $column = $tables['clickedme_column'];
 
-	// add join to retrieve user name information
-	$joinInfo[] = array (	'join_table'          =>  'users',			// table for the join
-							'join_field'          =>  'uname',			// field in the join table that should be in the result with
-                         	'object_field_name'   =>  'uname',			// ...this name for the new column
-                         	'compare_field_table' =>  'uid',			// regular table column that should be equal to
-                         	'compare_field_join'  =>  'uid');			// ...the table in join_table
+    $joinInfo[] = array ( 'join_table'			=> 'clickedme',   // table for the join
+                          'join_field'			=> array('id', 'uid', 'clicked_uid','timestamp'),   // field in the join table that should be in the result with
+                          'object_field_name'   => array('id', 'uid', 'clicked_uid','timestamp'),   // ...this name for the new column
+                          'compare_field_table' => 'uid',   // regular table column that should be equal to
+                          'compare_field_join'  => 'uid');  // ...the table in join_table
 
     // Get the data from the database
-    $where 		= "WHERE tbl.".$column['clicked_uid']." = ".$uid;
-    $orderby 	= "ORDER by tbl.".$column['timestamp']." DESC";
-    return DBUtil::selectExpandedObjectArray('clickedme',$joinInfo,$where,$orderby,-1,$amount);
+    $where   = "WHERE ".$column['clicked_uid']." = ".$uid;
+    $orderby  = "ORDER by ".$column['timestamp']." DESC";
+    return DBUtil::selectExpandedObjectArray('users',$joinInfo,$where,$orderby,-1,$amount);
 }
 
 /**
@@ -147,24 +146,23 @@ function clickedme_userapi_getViewers($args)
 function clickedme_userapi_getHistory($args)
 {
 	$amount = (int)$args['amount'];
-    $uid 	= (int)$args['uid'];
-    if (!($uid>1)) return;
+	$uid  = (int)$args['uid'];
+	if (!($uid>1)) return;
     
     // Database information
-    $tables =& pnDBGetTables();
+	$tables =& pnDBGetTables();
     $column = $tables['clickedme_column'];
 
-	// add join to retrieve user name information
-	$joinInfo[] = array (	'join_table'          =>  'users',			// table for the join
-							'join_field'          =>  'uname',			// field in the join table that should be in the result with
-                         	'object_field_name'   =>  'uname',			// ...this name for the new column
-                         	'compare_field_table' =>  'clicked_uid',			// regular table column that should be equal to
-                         	'compare_field_join'  =>  'uid');			// ...the table in join_table
+    $joinInfo[] = array ( 'join_table'			=> 'clickedme',   // table for the join
+                          'join_field'			=> array('id', 'uid', 'clicked_uid','timestamp'),   // field in the join table that should be in the result with
+                          'object_field_name'   => array('id', 'uid', 'clicked_uid','timestamp'),   // ...this name for the new column
+                          'compare_field_table' => 'uid',   // regular table column that should be equal to
+                          'compare_field_join'  => 'clicked_uid');  // ...the table in join_table
 
     // Get the data from the database
-    $where 		= "WHERE tbl.".$column['uid']." = ".$uid;
-    $orderby 	= "ORDER by tbl.".$column['timestamp']." DESC";
-    return DBUtil::selectExpandedObjectArray('clickedme',$joinInfo,$where,$orderby,-1,$amount);
+    $where   = "WHERE a.".$column['uid']." = ".$uid;
+    $orderby  = "ORDER by a.".$column['timestamp']." DESC";
+    return DBUtil::selectExpandedObjectArray('users',$joinInfo,$where,$orderby,-1,$amount);
 }
 
 /**
