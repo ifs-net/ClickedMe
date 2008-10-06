@@ -1,0 +1,48 @@
+pnClickedMe:
+============
+
+1. init & activate it in the module administration
+2. let the module that shows the userprofile know 
+   that pnClickedMe is now installed and should be used:
+   
+   a) regular psotnuke user profile module:
+   
+   Just modify the following piece of code in your user.php:
+
+   if (isset($op) && ($op == 'userinfo')) {
+       $module = 'User';
+   }
+       
+   to the following code:
+
+   if (isset($op) && ($op == 'userinfo')) {
+       $module = 'User';
+       // begin core hack for pnClickedMe
+       if (pnModAvailable('ClickedMe')) {
+          $uname=pnVarCleanFrominput('uname');
+          $uid=pnUserGetIDFromName($uname);
+          pnModAPIFunc('ClickedMe','user','addClick',array('clicked_uid'=>$uid));
+       }
+       // end of core hack for pnClickedMe
+   }
+   
+
+
+   b) pnRender based user profile modules:
+   
+   Just add the following line to the template that 
+   shows the details of the clicked user:
+   
+   <!--[pnmodapifunc modname="ClickedMe" type="user" func="addClick" clicked_uid=$uid]-->
+   
+   $uid is just an example - I don't know which variable 
+   manages the user's uid-variable.
+   If the username is given as argument / variable called "uname" 
+   for example you would have to add the following line instead 
+   of the line above:
+   
+   <!--[pnmodapifunc modname="ClickedMe" type="user" func="addClick" clicked_uname=$uname]-->
+
+3. Install the block at your site. If there are any clicks 
+   (without own clicks on the own profile) for your profile the 
+   block will be displayed. Otherwise the block will not be shown!

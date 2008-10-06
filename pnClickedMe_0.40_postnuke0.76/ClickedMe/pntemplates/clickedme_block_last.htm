@@ -1,0 +1,12 @@
+<p><small>
+<!--[if $items eq 0]-->
+    <!--[pnml name="_CLICKEDMENOBODYCLICKEDYOU"]-->.
+<!--[else]-->
+    <!--[pnml name="_CLICKEDMETHESECLICKEDYOU"]-->:<br />
+    <!--[foreach from=$items item=item]-->
+    <a href="user.php?op=userinfo&uname=<!--[$item.uname]-->"><!--[$item.uname]--></a>, 
+    <!--[/foreach]-->
+    <!--[pnml name="_CLICKEDMEVISITTHEM"]-->
+<!--[/if]-->
+</small>
+</p>
