@@ -3,8 +3,9 @@
 <!--[if $visitors|@count eq 0]-->
 	    <!--[pnml name="_CLICKEDMENOBODYCLICKEDYOU"]-->.
 <!--[else]-->
+	<ul>
 	<!--[foreach from=$visitors item="user"]-->
-		<!--[$user.uname|userprofilelink]-->, 
+		&#187; <!--[$user.uname|userprofilelink]--><br />
 	<!--[/foreach]-->
-	</ul><!--[pnml name="_CLICKEDMEDOYOUKNOWTHEM"]--><br />
+	</ul><br />
 <!--[/if]-->
