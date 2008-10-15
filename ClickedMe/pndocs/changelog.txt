@@ -1,0 +1,38 @@
+Changelog for the clickedme module
+
+SVN:
+====
+1.2:
+====
+- fixed bug of main user template
+
+1.0
+===
+- full zikula compatible
+- removed bug if users do not exist any more
+
+new in 0.50:
+============
+- The module is now a PostNuke 0.8 module. You now need 
+  PN > .8 to use the version newer than 0.40!
+
+new in 0.40:
+============
+- API hast now a new function: getAvg. This calculates
+  the 7 day average and tells you how often a profile
+  is visited per day. This function is included and
+  used in pnProfile 0.50 and above.
+
+new in 0.30:
+============
+- extended API functions for own history and users 
+  that clicked own profile
+- users can decide about their privacy settings and
+  surf anonymously if they want.
+- history and latest visits of the own profile can
+  be viewed in the settings page
+
+
+0.11:
+=====
+fixed bug: time for data who clicked whom was not saved long enough

@@ -1,0 +1,10 @@
+<!--[pnpageaddvar name="stylesheet" value="modules/ClickedMe/pnstyle/style.css"]-->
+
+<!--[if $visitors|@count eq 0]-->
+	    <!--[pnml name="_CLICKEDMENOBODYCLICKEDYOU"]-->.
+<!--[else]-->
+	<!--[foreach from=$visitors item="user"]-->
+		<!--[$user.uname|userprofilelink]-->, 
+	<!--[/foreach]-->
+	<!--[pnml name="_CLICKEDMEDOYOUKNOWTHEM"]--><br />
+<!--[/if]-->
