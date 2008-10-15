@@ -2,7 +2,9 @@ Changelog for the clickedme module
 
 SVN:
 ====
-- added live update check
+1.2:
+====
+- fixed bug of main user template
 
 1.0
 ===
