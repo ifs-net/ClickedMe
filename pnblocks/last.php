@@ -59,6 +59,7 @@ function ClickedMe_lastblock_display($blockinfo)
 	// activate caching
     $render->caching = true;
     $render->cache_lifetime = 120; // cache for 2 minutes
+    $render->cache_id = pnUsergetVar('uid');
 
     // Assign data
     $uid = pnUserGetVar('uid');
@@ -69,7 +70,7 @@ function ClickedMe_lastblock_display($blockinfo)
     						'amount'	=> 5
 								))
 		));
-		    
+	
     // Populate block info and pass to theme
     $blockinfo['content'] = $render->fetch('clickedme_block_last.htm');
     return themesideblock($blockinfo);
