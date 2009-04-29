@@ -1,11 +1,15 @@
 <!--[pnpageaddvar name="stylesheet" value="modules/ClickedMe/pnstyle/style.css"]-->
 
-<!--[if $visitors|@count eq 0]-->
-	    <!--[pnml name="_CLICKEDMENOBODYCLICKEDYOU"]-->.
+<!--[if $anonymous eq 1]-->
+	<!--[pnml name="_CLICKEDMEANONYMOUSMODE"]-->
 <!--[else]-->
-	<ul>
-	<!--[foreach from=$visitors item="user"]-->
-		&#187; <!--[$user.uname|userprofilelink]--><br />
-	<!--[/foreach]-->
-	</ul><br />
+	<!--[if $visitors|@count eq 0]-->
+		    <!--[pnml name="_CLICKEDMENOBODYCLICKEDYOU"]-->.
+	<!--[else]-->
+		<ul>
+		<!--[foreach from=$visitors item="user"]-->
+			&#187; <!--[$user.uname|userprofilelink]--><br />
+		<!--[/foreach]-->
+		</ul><br />
+	<!--[/if]-->
 <!--[/if]-->

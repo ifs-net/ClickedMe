@@ -11,4 +11,6 @@
 define('_CLICKEDMEITEMNUMBER', 			'How many usernames should be listed');
 define('_CLICKEDMENOBODYCLICKEDYOU',	'Your profile was not visited yet.');
 define('_CLICKEDMEDOYOUKNOWTHEM',		'do you know them?');
+define('_CLICKEDMEANONYMOUSMODE',		'Surfing anonymously also disables the logging who clicked at your profile.');
+define('_CLICKEDMEMANAGESETTINGS',		'My privacy settings');
 ?>

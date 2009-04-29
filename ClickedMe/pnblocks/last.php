@@ -63,6 +63,12 @@ function ClickedMe_lastblock_display($blockinfo)
 
     // Assign data
     $uid = pnUserGetVar('uid');
+    
+    // Users that surf anonymously should not see who clicked there profile
+    if (clickedme_userapi_getSettings(array('uid'=>pnUserGetVar('uid')))) {
+		$render->assign('anonymous', 1);
+	}
+    
     $render->assign(array(
     		'uid'		=> $uid,
     		'visitors'	=> pnModAPIFunc('ClickedMe','user','getViewers',array(

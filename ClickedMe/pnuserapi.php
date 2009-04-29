@@ -19,7 +19,7 @@
 function clickedme_userapi_getSettings($args) 
 {
     $uid=(int)$args['uid'];
-    if (!($uid>1)) return;
+    if (!($uid>1)) return false;
     else if (DBUtil::selectObjectCountByID('clickedme_settings',(int)$args['uid'],'uid') > 0) return true;
     else return false;
 } 
@@ -70,6 +70,9 @@ function clickedme_userapi_addClick($args) {
     
     // If the user wants to be anonymous we can return also
     if (clickedme_userapi_getSettings(array('uid'=>pnUserGetVar('uid')))) return;
+    
+    // If the clicked person is also anonymous this person will not see who clicked the own profile
+    if (clickedme_userapi_getSettings(array('uid'=>$clicked_uid))) return;
     
     // get the user-id
     $clicked_uid=$args['clicked_uid'];
