@@ -11,4 +11,6 @@
 define('_CLICKEDMEITEMNUMBER', 			'Anzahl der darzustellenden maximalen Usernamen');
 define('_CLICKEDMENOBODYCLICKEDYOU',	'Dein Profil wurde noch nicht besucht');
 define('_CLICKEDMEDOYOUKNOWTHEM',		'kennst Du die schon?');
+define('_CLICKEDMEANONYMOUSMODE',		'Wer anonym surft sieht nicht, wer ihn angeklickt hat');
+define('_CLICKEDMEMANAGESETTINGS',		'Privatsphäre-Einstellungen');
 ?>

@@ -10,7 +10,7 @@
 
 define('_PNCLICKEDMEUSERSETTINGS',					'Einstellungen zur Privatsphäre / Tracking');
 define('_PNCLICKEDMEPRIVACYSETTINGS',				'Standardmäßig ist es so, dass jeder Benutzer sieht, wer sein Profil in letzter Zeit besucht hat. Dies fördert die Interaktion und Aktivität in einer Community. Wenn das nicht gewollt ist, wenn also ein "anonymes Surfen" bevorzugt wird, dann bitte hier die Einstellung entsprechend vornehmen.');
-define('_PNCLICKEDMEIWANTTOBEANONYMOUS',			'Ich will anonym surfen. Andere sollen nicht sehen wenn ich ihre Profile ansehe.');
+define('_PNCLICKEDMEIWANTTOBEANONYMOUS',			'Ich will anonym surfen. Andere sollen nicht sehen wenn ich ihre Profile ansehe. Dies bedeutet jedoch auch, dass ich nicht sehe, wer mein Profil besucht.');
 define('_PNCLICKEDMESUBMIT',						'Einstellungen speichern');
 define('_PNCLICKEDMEPNUSERSETTINGS',				'Zurück zu den eigenen Einstellungen');
 define('_PNCLICEKDMENOAUTHKEY',						'Die Anfrage konnte nicht bearbeitet werden, bitte erneut wiederholen und im erneuten Fehlerfall den Administrator der Community kontaktieren!');
