@@ -43,7 +43,7 @@ function ClickedMe_mailzapi_getContent($args)
             $viewers = pnModAPIFunc('ClickedMe','user','getViewers',array('uid' => $args['uid'], 'amount' => 5));
             if ($args['contenttype'] == 't') {
                 $output="\n";
-                foreach ($viewers as $items) {
+                foreach ($viewers as $item) {
                     $output.="> ".$item['uname']."\n";
                 }
                 $output.="\n";
