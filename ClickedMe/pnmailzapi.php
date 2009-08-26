@@ -17,7 +17,7 @@ function ClickedMe_mailzapi_getPlugins($args)
         'pluginid'      => 1,   // internal id for this module
         'title'         => _CLICKEDME_LAST_VISITS,
         'description'   => _CLICKEDME_LAST_VISITS_DESCRIPTION,
-        'module'        => 'mailz'
+        'module'        => 'ClickedMe'
     );
     return $plugins;
 }
@@ -36,11 +36,16 @@ function ClickedMe_mailzapi_getContent($args)
 {
     // Load language definitions
     pnModLangLoad('ClickedMe','mailz');
-
+    $show = (int) $args['params']['show'];
+    if ($show > 0) {
+        $amount = $show;
+    } else {
+        $amount = 5;
+    }
     switch ($args['pluginid']) {
         case 1:
             // Get Viewers
-            $viewers = pnModAPIFunc('ClickedMe','user','getViewers',array('uid' => $args['uid'], 'amount' => 5));
+            $viewers = pnModAPIFunc('ClickedMe','user','getViewers',array('uid' => $args['uid'], 'amount' => $amount));
             if ($args['contenttype'] == 't') {
                 $output="\n";
                 foreach ($viewers as $item) {
@@ -50,7 +55,7 @@ function ClickedMe_mailzapi_getContent($args)
             } else {
                 $render = pnRender::getInstance('ClickedMe');
                 $render->assign('visitors', $viewers);
-                $output = $render->display('clickedme_mailz_visitors.htm');
+                $output = $render->fetch('clickedme_mailz_visitors.htm');
             }
             return $output;
             break;
