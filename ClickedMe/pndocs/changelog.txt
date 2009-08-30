@@ -1,7 +1,17 @@
 Changelog for the clickedme module
 
-SVN:
+See http://code.zikula.org/clickedme/timeline for details
+
+
+1.4:
 ====
+- added support for advanced mailer module "mailz" and 
+  providing a plugin for newsletters or mailings
+  
+1.3:
+====
+- some bugs fixed
+
 1.2:
 ====
 - fixed bug of main user template
