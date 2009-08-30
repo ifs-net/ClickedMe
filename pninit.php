@@ -34,8 +34,11 @@ function ClickedMe_upgrade($oldversion)
         case '0.20':
 	    // we need to add the settings table
 	    if (!DBUTIL::createtable('clickedme_settings')) return false;
+	    case '1.0':
+	    case '1.1':
+	    case '1.2':
+	    case '1.3':
 	default:
-	    break;
     }
     return true;
 }

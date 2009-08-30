@@ -12,7 +12,7 @@
 // for display and upgrade purposes
 $modversion['name']           = 'ClickedMe';
 // the version string must not exceed 10 characters!
-$modversion['version']        = '1.3';
+$modversion['version']        = '1.4';
 $modversion['description']    = 'See who visited your profile!';
 $modversion['displayname']    = 'ClickedMe';
 
