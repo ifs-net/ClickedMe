@@ -1,7 +1,7 @@
 <?php
 /**
 * @package      ClickedMe
-* @version      $Id: mailz.php 32 2009-08-25 14:58:39Z quan $
+* @version      $Id$
 * @author       Florian Schießl
 * @link         http://www.ifs-net.de
 * @copyright    Copyright (C) 2009
