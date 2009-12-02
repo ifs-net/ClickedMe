@@ -1,7 +1,7 @@
 <?php
 /**
  * @package      ClickedMe
- * @version      $Id: pnmyprofileapi.php 1 2009-10-28 09:38:39Z gm_design $
+ * @version      $Id$
  * @author       Markus Größing
  * @link         http://www.opelclub.at
  * @copyright    Copyright (C) 2009
