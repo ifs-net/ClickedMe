@@ -3,6 +3,10 @@ Changelog for the clickedme module
 See http://code.zikula.org/clickedme/timeline for details
 
 
+1.5:
+====
+- added MyProfile plugin to include visitor information into own profile
+
 1.4:
 ====
 - added support for advanced mailer module "mailz" and 
