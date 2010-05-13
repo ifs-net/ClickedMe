@@ -39,6 +39,7 @@ function ClickedMe_upgrade($oldversion)
 	    case '1.2':
 	    case '1.3':
 	    case '1.4':
+	    case '1.5':
 	default:
     }
     return true;
