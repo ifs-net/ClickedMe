@@ -2,6 +2,10 @@ Changelog for the clickedme module
 
 See http://code.zikula.org/clickedme/timeline for details
 
+1.6:
+====
+- added ContactList support. Ignored contacts will not be recorded any
+  more for the visits of the own profile
 
 1.5:
 ====

@@ -11,18 +11,18 @@
 /*
  * getSettings
  *
- * Get  user's privacy settings 
+ * Get  user's privacy settings
  *
  * @param	$args['uid']	int
  * @return	bool		true = anonymous, false = not anonymous
  */
-function clickedme_userapi_getSettings($args) 
+function clickedme_userapi_getSettings($args)
 {
     $uid=(int)$args['uid'];
     if (!($uid>1)) return false;
     else if (DBUtil::selectObjectCountByID('clickedme_settings',(int)$args['uid'],'uid') > 0) return true;
     else return false;
-} 
+}
 
 /*
  * storeSettings
@@ -35,23 +35,23 @@ function clickedme_userapi_storeSettings() {
 
     // No tracking for unregistered users!
     if (!pnuserloggedin()) return;
-    
+
     $anonymous = FormUtil::getPassedValue('anonymous');
 
     // very simple:
     // if a user wants to be anonymous he will get a entry in the table with his user id
     // so we always first delete a entry if there is one and - if $anonymous is set - we
     // will add a new one.
-    
+
     // delete old
     DBUtil::deleteObjectByID('clickedme_settings',pnUserGetVar('uid'),'uid');
-    
+
     // store new if we need a new setting stored
     if (!isset($anonymous)) return true;
     $obj = array('uid'=>pnUserGetVar('uid'));
     DBUtil::insertObject($obj,'clickedme_settings');
     return true;
-} 
+}
 
 /*
  * addClick
@@ -67,13 +67,13 @@ function clickedme_userapi_addClick($args) {
 
     // No tracking for unregistered users!
     if (!pnuserloggedin()) return;
-    
+
     // If the user wants to be anonymous we can return also
     if (clickedme_userapi_getSettings(array('uid'=>pnUserGetVar('uid')))) return;
-    
+
     // If the clicked person is also anonymous this person will not see who clicked the own profile
     if (clickedme_userapi_getSettings(array('uid'=>$clicked_uid))) return;
-    
+
     // get the user-id
     $clicked_uid=$args['clicked_uid'];
     if (!($clicked_uid > 1)) {
@@ -85,7 +85,16 @@ function clickedme_userapi_addClick($args) {
 
     // we do not need to register clicks on the own profile page
     if (pnUsergetvar('uid') == $clicked_uid) return;
-    
+
+    // Now first we will check if the clicking user is ignored by the visited user. if this is
+    // the case the click will not be recorded.
+    if (pnModAvailable('ContactList')) {
+    	// Check for ignore settings
+    	if (pnModAPIFunc('ContactList','user','isIgnored',array('uid'=>$clicked_uid, 'iuid'=>pnUserGetVar('uid')))) {
+    		return;
+    	}
+    }
+
     // ok we now have the user id of the clicked user - let's go on and get the database table
     $dbconn =& pnDBGetConn(true);
     $pntable =& pnDBGetTables();
@@ -96,7 +105,7 @@ function clickedme_userapi_addClick($args) {
     $where = "    WHERE ".$column['uid']."=" . pnVarPrepForStore(pnUserGetVar('uid')) . "
 	    AND ".$column['clicked_uid']."= " . pnVarPrepForStore($clicked_uid);
     DBUtil::deleteWhere('clickedme',$where);
-    
+
     // delete all old clicks that are no longer interesting. We don't want to store old data!
     $new_timestamp= time()-(60*60*24*60); // 60 days are enough!
     $where ="   WHERE ".$column['timestamp']." <" . pnVarPrepForStore($new_timestamp);
@@ -112,7 +121,7 @@ function clickedme_userapi_addClick($args) {
 
 /**
  * get the last visitors of the own profile page
- * 
+ *
  * @param	$args['uid']	int	uid of the user that has been "viewed"
  * @param	$args['amount']	int	how many items should be returned?
  * @return	array
@@ -122,7 +131,7 @@ function clickedme_userapi_getViewers($args)
 	$amount = (int)$args['amount'];
 	$uid  = (int)$args['uid'];
 	if (!($uid>1)) return;
-    
+
     // Database information
 	$tables =& pnDBGetTables();
     $column = $tables['clickedme_column'];
@@ -141,7 +150,7 @@ function clickedme_userapi_getViewers($args)
 
 /**
  * get the history of profile pages you have visited yourself
- * 
+ *
  * @param	$args['uid']	int	uid of the user
  * @param	$args['amount']	int	how many items should be returned?
  * @return	array
@@ -151,7 +160,7 @@ function clickedme_userapi_getHistory($args)
 	$amount = (int)$args['amount'];
 	$uid  = (int)$args['uid'];
 	if (!($uid>1)) return;
-    
+
     // Database information
 	$tables =& pnDBGetTables();
     $column = $tables['clickedme_column'];
@@ -170,7 +179,7 @@ function clickedme_userapi_getHistory($args)
 
 /**
  * get the average visits of a profile
- * 
+ *
  * @param	$args['uid']	int	uid of the user
  * @return	array
  */
@@ -178,9 +187,9 @@ function clickedme_userapi_getAvg($args)
 {
     $uid = (int)$args['uid'];
     if (!($uid>1)) return;
-    
+
     $ts = time()-(7*24*60*60);
-    
+
     // Database information
     $dbconn =& pnDBGetConn(true);
     $pntable =pnDBGetTables();
@@ -189,7 +198,7 @@ function clickedme_userapi_getAvg($args)
 
     // Get the data from the database
     $where = "WHERE ".$column['clicked_uid']." = ".(int)$uid." AND ".$column['timestamp']." > ".$ts;
-	    
+
     $counter = DBUtil::selectObjectCount('clickedme',$where);
     $avg=(string)($counter/7);
     return substr($avg,0,4);
