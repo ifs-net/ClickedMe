@@ -3,17 +3,17 @@
 <!--[include file="clickedme_user_header.htm"]-->
 
 
-<h1><!--[pnml name="_PNCLICKEDMEUSERSETTINGS"]--></h1>
-<!--[pnml name="_PNCLICKEDMEPRIVACYSETTINGS"]--><br /><br />
+<h1><!--[gt text="Privacy Settings"]--></h1>
+<!--[gt text="The normal settings track every other profile you visit and users can see that you visited their profile. If you want to surf anonymously you can disable the profile tracking. Doing this will not let others see that you have clicked their profiles. But you will also not be able to see who viewed your profile page. Due to more interaction you should not disable tracking and surf anonymously."]--><br /><br />
 
 <form method="post" action="<!--[pnmodurl modname="ClickedMe" type="user" func="main"]-->">
 <input type="hidden" value="update" name="action" />
 <input type="hidden" value="<!--[pnsecgenauthkey module="ClickedMe"]-->" name="authid" />
-<input type="checkbox" name="anonymous" value="yes" <!--[if $privacy]--> checked="checked" <!--[/if]-->/> <!--[pnml name="_PNCLICKEDMEIWANTTOBEANONYMOUS"]--><br /><br />
+<input type="checkbox" name="anonymous" value="yes" <!--[if $privacy]--> checked="checked" <!--[/if]-->/> <!--[gt text="I want to surf anonymously!"]--><br /><br />
 
-<!--[pnml name="_PNCLICKEDMEMOREINFORMATION"]--><br /><br />
+<!--[gt text="Changing these settings will only affect visits that take place later - earlier visits will not be deleted."]--><br /><br />
 
-<input type="submit" value="<!--[pnml name="_PNCLICKEDMESUBMIT"]-->" />
+<input type="submit" value="<!--[gt text="Update Settings"]-->" />
 </form>
 
 <!--[include file="clickedme_user_footer.htm"]-->

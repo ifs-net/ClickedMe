@@ -4,7 +4,7 @@
 * @version      $Id$
 * @author       Florian Schieﬂl
 * @link         http://www.ifs-net.de
-* @copyright    Copyright (C) 2008
+* @copyright    Copyright (C) 2008 - 2010
 * @license      http://www.gnu.org/copyleft/gpl.html GNU General Public License
 */
 
@@ -40,6 +40,7 @@ function ClickedMe_upgrade($oldversion)
 	    case '1.3':
 	    case '1.4':
 	    case '1.5':
+	    case '1.6':
 	default:
     }
     return true;

@@ -1,10 +1,10 @@
 <!--[pnpageaddvar name="stylesheet" value="modules/ClickedMe/pnstyle/style.css"]-->
 
 <!--[if $anonymous eq 1]-->
-	<!--[pnml name="_CLICKEDMEANONYMOUSMODE"]-->
+	<!--[gt text="Clicks to other profiles are not tracked for you due to your privacy settings. This is why clicks to your profile are not tracked, too."]--> <a href="<!--[pnmodurl modname="ClickedMe"]-->"><!--[gt text="Change your privacy settings!" domain="module_clickedme"]--></a>
 <!--[else]-->
 	<!--[if $visitors|@count eq 0]-->
-		    <!--[pnml name="_CLICKEDMENOBODYCLICKEDYOU"]-->.
+		    <!--[gt text="Nobody visited your profile yet. Be more active and other users will visit your profile!" domain="module_clickedme"]-->.
 	<!--[else]-->
 		<ul>
 		<!--[foreach from=$visitors item="user"]-->
