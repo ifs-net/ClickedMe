@@ -2,9 +2,9 @@
 /**
  * @package      ClickedMe
  * @version      $Id$
- * @author       Markus Größing
+ * @author       Florian Schießl and Markus Größing
  * @link         http://www.opelclub.at
- * @copyright    Copyright (C) 2009
+ * @copyright    Copyright (C) 2009 - 2010
  * @license      http://www.gnu.org/copyleft/gpl.html GNU General Public License
  */
 
@@ -44,10 +44,11 @@ function ClickedMe_myprofileapi_getTitle($args)
     $ownid = pnUserGetVar('uid');
 	
 	/* if loggedin User is the Same, as the viewed one, show ClickedMe Tab */
+    $dom = ZLanguage::getModuleDomain('ClickedMe');
 	
 	if ( $uid == $ownid) {
 		pnModLangLoad('ClickedMe','myprofile');
-		return _CLICKEDMYTABTITLE;
+		return __('My visits',$dom);
 	} else {
 		return "";
 	}

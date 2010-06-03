@@ -4,16 +4,18 @@
 * @version      $Id$
 * @author       Florian Schieﬂl
 * @link         http://www.ifs-net.de
-* @copyright    Copyright (C) 2008
+* @copyright    Copyright (C) 2008 - 2010
 * @license      http://www.gnu.org/copyleft/gpl.html GNU General Public License
 */
+
+$dom = ZLanguage::getModuleDomain('ClickedMe');
 
 // The following information is used by the Modules module 
 // for display and upgrade purposes
 $modversion['name']           = 'ClickedMe';
 // the version string must not exceed 10 characters!
 $modversion['version']        = '2.0';
-$modversion['description']    = 'See who visited your profile!';
+$modversion['description']    = __('See who visited your profile!',$dom);
 $modversion['displayname']    = 'ClickedMe';
 
 // The following in formation is used by the credits module

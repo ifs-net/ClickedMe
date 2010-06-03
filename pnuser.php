@@ -15,13 +15,15 @@ function ClickedMe_user_main()
 {
     // Security check
     if (!SecurityUtil::checkPermission('ClickedMe::', '::', ACCESS_COMMENT)) return Logutil::registerPermissionError();
+
+    $dom = ZLanguage::getModuleDomain('ClickedMe');
 		
     $action=FormUtil::getPassedValue('action');
     if (isset($action) && ($action=='update')) {
 	// Is there a valid auth-key?
 	if (SecurityUtil::confirmAuthKey()) {
 	    pnModAPIFunc('ClickedMe','user','storeSettings');
-	    LogUtil::registerStatus(_PNCLICKEDMESTORED);
+	    LogUtil::registerStatus(__('Settings stored',$dom));
 	}
         else LogUtil::registerAuthidError();
     }

@@ -17,14 +17,16 @@
 function ClickedMe_accountapi_getall($args)
 {
     $items = null;
+
     // only show the options to logged in users of course!
     if (!pnUserLoggedIn()) return $items;
+
+    $dom = ZLanguage::getModuleDomain('ClickedMe');
     
     if (SecurityUtil::checkPermission('ClickedMe::','::', ACCESS_COMMENT)) {
-	pnModLangLoad('ClickedMe','user');
 	$items = array(array(
 			'url'	=> pnModURL('ClickedMe','user','main'),
-			'title'	=> _PNCLICKEDMESETTINGS,
+			'title'	=> __('Privacy Settings',$dom),
 			'icon'	=> 'icon_clickedme.gif'		));
     }
     

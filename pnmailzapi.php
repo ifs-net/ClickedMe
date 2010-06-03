@@ -9,14 +9,14 @@
 function ClickedMe_mailzapi_getPlugins($args)
 {
     // Load language definitions
-    pnModLangLoad('ClickedMe','mailz');
-    
+    $dom = ZLanguage::getModuleDomain('ClickedMe');
+
     $plugins = array();
     // Add first plugin.. You can add more using more arrays
     $plugins[] = array(
         'pluginid'      => 1,   // internal id for this module
-        'title'         => _CLICKEDME_LAST_VISITS,
-        'description'   => _CLICKEDME_LAST_VISITS_DESCRIPTION,
+        'title'         => __('Last visits of user profile', $dom),
+        'description'   => __('This plugin will insert the last users that have visited the mail recipients last visitors with their avatar.', $dom),
         'module'        => 'ClickedMe'
     );
     return $plugins;
@@ -35,7 +35,7 @@ function ClickedMe_mailzapi_getPlugins($args)
 function ClickedMe_mailzapi_getContent($args)
 {
     // Load language definitions
-    pnModLangLoad('ClickedMe','mailz');
+    $dom = ZLanguage::getModuleDomain('ClickedMe');
     $show = (int) $args['params']['show'];
     if ($show > 0) {
         $amount = $show;
