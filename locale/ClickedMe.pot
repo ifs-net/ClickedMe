@@ -1,0 +1,111 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Zikula component\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-06-03 22:38+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: pnmailzapi.php:18
+msgid "Last visits of user profile"
+msgstr ""
+
+#: pnmailzapi.php:19
+msgid ""
+"This plugin will insert the last users that have visited the mail recipients "
+"last visitors with their avatar."
+msgstr ""
+
+#: pnversion.php:18
+msgid "See who visited your profile!"
+msgstr ""
+
+#: pnaccountapi.php:29 pntemplates/clickedme_user_main.htm:6
+#: pntemplates/clickedme_user_header.htm:7
+msgid "Privacy Settings"
+msgstr ""
+
+#: pnmyprofileapi.php:51
+msgid "My visits"
+msgstr ""
+
+#: pnuser.php:26
+msgid "Settings stored"
+msgstr ""
+
+#: pntemplates/clickedme_user_history.htm:5
+msgid "Users that visited your profile page"
+msgstr ""
+
+#: pntemplates/clickedme_user_history.htm:22
+msgid "The last profiles you visited"
+msgstr ""
+
+#: pntemplates/clickedme_block_last.htm:4
+#: pntemplates/clickedme_block_last_alternative.htm:4
+msgid ""
+"Clicks to other profiles are not tracked for you due to your privacy "
+"settings. This is why clicks to your profile are not tracked, too."
+msgstr ""
+
+#: pntemplates/clickedme_block_last.htm:4
+#: pntemplates/clickedme_block_last_alternative.htm:4
+msgid "Change your privacy settings!"
+msgstr ""
+
+#: pntemplates/clickedme_block_last.htm:7
+#: pntemplates/clickedme_block_last_alternative.htm:7
+msgid ""
+"Nobody visited your profile yet. Be more active and other users will visit "
+"your profile!"
+msgstr ""
+
+#: pntemplates/clickedme_block_last.htm:12
+msgid "do you know them alredy? Visit their profiles!"
+msgstr ""
+
+#: pntemplates/clickedme_user_main.htm:7
+msgid ""
+"The normal settings track every other profile you visit and users can see "
+"that you visited their profile. If you want to surf anonymously you can "
+"disable the profile tracking. Doing this will not let others see that you "
+"have clicked their profiles. But you will also not be able to see who viewed "
+"your profile page. Due to more interaction you should not disable tracking "
+"and surf anonymously."
+msgstr ""
+
+#: pntemplates/clickedme_user_main.htm:12
+msgid "I want to surf anonymously!"
+msgstr ""
+
+#: pntemplates/clickedme_user_main.htm:14
+msgid ""
+"Changing these settings will only affect visits that take place later - "
+"earlier visits will not be deleted."
+msgstr ""
+
+#: pntemplates/clickedme_user_main.htm:16
+msgid "Update Settings"
+msgstr ""
+
+#: pntemplates/clickedme_block_last_modify.htm:3
+msgid "How many users (max) should be displayed?"
+msgstr ""
+
+#: pntemplates/clickedme_user_header.htm:3
+msgid "User Account Panel"
+msgstr ""
+
+#: pntemplates/clickedme_user_header.htm:11
+msgid "Profiles I visited and users who visited my profile"
+msgstr ""
