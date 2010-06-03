@@ -33,7 +33,7 @@ function ClickedMe_upgrade($oldversion)
     switch($oldversion) {
         case '0.20':
 	    // we need to add the settings table
-	    if (!DBUTIL::createtable('clickedme_settings')) return false;
+	    if (!DBUtil::createtable('clickedme_settings')) return false;
 	    case '1.0':
 	    case '1.1':
 	    case '1.2':
