@@ -30,4 +30,3 @@ function ClickedMe_accountapi_getall($args)
     
     return $items;
 }
-?>

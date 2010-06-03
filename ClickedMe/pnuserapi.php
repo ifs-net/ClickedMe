@@ -203,4 +203,3 @@ function clickedme_userapi_getAvg($args)
     $avg=(string)($counter/7);
     return substr($avg,0,4);
 }
-?>

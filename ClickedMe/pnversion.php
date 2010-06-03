@@ -12,7 +12,7 @@
 // for display and upgrade purposes
 $modversion['name']           = 'ClickedMe';
 // the version string must not exceed 10 characters!
-$modversion['version']        = '1.6';
+$modversion['version']        = '2.0';
 $modversion['description']    = 'See who visited your profile!';
 $modversion['displayname']    = 'ClickedMe';
 
@@ -29,5 +29,3 @@ $modversion['contact']        = 'http://www.ifs-net.de/';
 // The following information tells the PostNuke core that this
 // module has an admin option.
 $modversion['admin']          = 0;
-
-?>

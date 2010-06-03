@@ -45,5 +45,3 @@ function ClickedMe_pntables()
     // Return the table information
     return $pntable;
 }
-
-?>

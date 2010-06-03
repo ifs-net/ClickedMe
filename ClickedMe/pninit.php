@@ -59,4 +59,3 @@ function ClickedMe_delete()
     // Deletion successful
     return true;
 }
-?>
