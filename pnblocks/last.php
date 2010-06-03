@@ -125,4 +125,3 @@ function ClickedMe_lastblock_update($blockinfo)
     $render->clear_cache('clickedme_block_last.htm');
     return $blockinfo;
 }
-?>

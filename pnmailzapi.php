@@ -66,4 +66,3 @@ function ClickedMe_mailzapi_getContent($args)
     // return emtpy string because we do not need anything to display in here...    
     return '';
 }
-
