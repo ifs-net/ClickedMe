@@ -70,7 +70,7 @@ class ClickedMe_Installer extends Zikula_AbstractInstaller
     {
       // Drop database tables
         DoctrineHelper::dropSchema($this->entityManager, array(
-            'ClickedMeModule_Entity_Visits'
+            'ClickedMe_Entity_Visits'
         ));
 
         // Remove module vars.
