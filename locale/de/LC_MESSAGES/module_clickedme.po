@@ -1,0 +1,207 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ClickedMe\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-12-02 14:41-0500\n"
+"PO-Revision-Date: 2012-12-02 20:10+0100\n"
+"Last-Translator: \n"
+"Language-Team: Florian Schießl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: lib/ClickedMe/Api/Admin.php:28
+msgid "Configure the ClickedMe module"
+msgstr "Das ClickedMe-Modul konfigurieren"
+
+#: lib/ClickedMe/Api/Admin.php:29
+msgid "ClickedMe administration"
+msgstr "ClickedMe-Moduladministration"
+
+#: lib/ClickedMe/Block/LastVisitors.php:36
+msgid ""
+"Notice: This block will not be displayed until you activate the ClickedMe "
+"module."
+msgstr ""
+"Hinweis: Dieser Block wird nur dann angezeigt, wenn das Modul ClickedMe auch "
+"aktiviert wurde."
+
+#: lib/ClickedMe/Block/LastVisitors.php:40
+msgid "Last visitors"
+msgstr "Zuletzt auf Deinem Profil"
+
+#: lib/ClickedMe/Block/LastVisitors.php:41
+msgid "Show a list of members that visited the own user profile."
+msgstr ""
+"Zeigt eine Liste der Mitglieder, welche das eigene Profil sich zuletzt "
+"angesehen haben."
+
+#: lib/ClickedMe/Block/LastVisitors.php:92
+msgid "My last visitors"
+msgstr "Zuletzt auf meinem Profil"
+
+#: lib/ClickedMe/Controller/Admin.php:26
+msgid "ClickedMe Module - Administration"
+msgstr "ClickedMe-Moduladministration"
+
+#: lib/ClickedMe/Controller/User.php:27
+msgid "Tracking preferences"
+msgstr "Einstellungen zur Privatsphäre"
+
+#: lib/ClickedMe/Form/Handler/Admin/Main.php:59
+msgid "Settings updated successfully"
+msgstr "Die Einstellungen wurden erfolgreich gespeichert"
+
+#: lib/ClickedMe/Form/Handler/Admin/Main.php:61
+msgid "Settings could not be updated"
+msgstr "Die Einstellungen konnten nicht gespeichert werden"
+
+#: lib/ClickedMe/Form/Handler/User/Main.php:76
+msgid "Tracking was successfully disabled for your account"
+msgstr ""
+"Für Deinen Account wurden die Aufzeichnungen des Besucherverhaltens "
+"deaktiviert"
+
+#: lib/ClickedMe/Form/Handler/User/Main.php:78
+msgid "An error occured: Tracking could not be disabled for your account"
+msgstr ""
+"Ein Fehler ist aufgetreten, das Aufzeichnen des Besucherverhaltens konnte "
+"für Deinen Account nicht deaktiviert werden"
+
+#: lib/ClickedMe/Form/Handler/User/Main.php:81
+msgid "No changes made - Logging was already disabled"
+msgstr ""
+"Es wurden keine Einstellungen geändert, da das Protokollieren des eigenen "
+"Besucherverhaltens bereits zuvor deaktiviert war."
+
+#: lib/ClickedMe/Form/Handler/User/Main.php:87
+msgid "Tracking was successfully enabled for your account"
+msgstr ""
+"Das Protokollieren des Besucherverhaltens wurde erfolgreich eingeschalten"
+
+#: lib/ClickedMe/Form/Handler/User/Main.php:96
+msgid "An error occured: Tracking could not be enabled for your account"
+msgstr ""
+"Ein Fehler ist aufgetreten: Das Protokollieren des Besucherverhaltens konnte "
+"für Deinen Account nicht aktiviert werden"
+
+#: lib/ClickedMe/Form/Handler/User/Main.php:99
+msgid "No changes made - Logging was already enabled"
+msgstr ""
+"Es wurden keine Änderungen vorgenommen, da das Protokollieren des "
+"Besucherverhaltens bereits zuvor aktiviert war"
+
+#: lib/ClickedMe/Version.php:26 lib/ClickedMe/Version.php:28
+msgid "ClickedMe"
+msgstr "MeineBesucher"
+
+#: lib/ClickedMe/Version.php:27
+msgid "Show your users who visited their profile"
+msgstr "Zeige Deinen Benutzern, wer ihr Profil besucht hat"
+
+#: templates/clickedme_admin_main.tpl:5
+msgid "Administration for Module ClickedMe"
+msgstr "Administration für das ClickedMe-Modul"
+
+#: templates/clickedme_admin_main.tpl:12
+msgid ""
+"Waiting period (in days) a user cannot see who visited the own profile after "
+"tracking for the own account was deactivated"
+msgstr ""
+"Wartezeit (in Tagen), die ein Benutzer warten muss, bevor er die Besuche "
+"anderer auf seinem Profil wieder angezeigt bekommt, wenn er die "
+"Protokollierung des Besucherverhaltens für das eigene Profil deaktiviert hat "
+"und wieder aktiviert"
+
+#: templates/clickedme_admin_main.tpl:13
+msgid "Waiting period in days"
+msgstr "Wartezeit in Tagen"
+
+#: templates/clickedme_admin_main.tpl:17 templates/clickedme_user_main.tpl:39
+msgid "Save"
+msgstr "Speichern"
+
+#: templates/clickedme_admin_main.tpl:18 templates/clickedme_user_main.tpl:40
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: templates/clickedme_admin_main.tpl:24
+msgid ""
+"To activate user tracking you have to integrate some code into the template "
+"of your profile module."
+msgstr ""
+"Um das Modul einzubinden, muss etwas Code in das Template des genutzten "
+"Profilmoduls eingefügt werden."
+
+#: templates/clickedme_admin_main.tpl:29
+msgid "Code to insert into template"
+msgstr ""
+"Code, der ins Template (wenn möglich am Ende des Templates) eingefügt werden "
+"muss"
+
+#: templates/clickedme_block_lastvisitors.tpl:1
+msgid "These users have just visited your profile"
+msgstr "Diese Besucher haben Dein Profil besucht"
+
+#: templates/clickedme_block_lastvisitors.tpl:8
+#: templates/clickedme_block_lastvisitors.tpl:12
+#: templates/clickedme_user_main.tpl:13
+msgid "Your profile has not been visited yet"
+msgstr "Dein Profil wurde bisher noch nicht besucht"
+
+#: templates/clickedme_block_lastvisitors.tpl:10
+msgid "take a look at their profile, too"
+msgstr "schaue doch auf deren Profil einmal an"
+
+#: templates/clickedme_block_lastvisitors_modify.tpl:4
+msgid "Amount"
+msgstr "Anzahl"
+
+#: templates/clickedme_user_main.tpl:1
+msgid "See who visited your profile"
+msgstr "Schaue, wer dein Profil besucht hat"
+
+#: templates/clickedme_user_main.tpl:4
+msgid "These are the last visitors of your user profile page"
+msgstr "Dies sind die letzten Besucher deines Profils"
+
+#: templates/clickedme_user_main.tpl:19
+#, php-format
+msgid ""
+"You had tracking deactivated before. There is a waiting period for you until "
+"you can view again who else viewed your profile (The remaining waiting "
+"period is %s days)"
+msgstr ""
+"Du hattest die Protokollierung des Besucherverhaltens für den eigenen "
+"Account ausgeschalten und nun wieder aktiviert. Hier ist eine kleine "
+"Wartezeit von %s Tag(en) notwendig. Nach dieser Zeit kannst Du wieder sehen, "
+"wer dein Profil besucht hat"
+
+#: templates/clickedme_user_main.tpl:23
+msgid "Change privacy settings"
+msgstr "Privatsphären-Einstellungen ändern"
+
+#: templates/clickedme_user_main.tpl:30
+msgid ""
+"You can disable user tracking for your account to make other users unable to "
+"see that you visited their profile. Please do not deactivate tracking to "
+"view other profiles and reactivate it afterwards. After reactivating "
+"tracking again (because you are interested in those who visited your "
+"profile) there will be a waiting period of 7 days until you can see again "
+"who visited your profile again."
+msgstr ""
+"Du kannst die Protokollierung deines Besucherverhaltens deaktivieren. Dann "
+"sehen andere Besucher nicht mehr, dass Du ihr Profil besucht hast. Im "
+"Gegenzug wirst aber auch Du nicht mehr sehen, wenn dein Profil besucht wurde."
+
+#: templates/clickedme_user_main.tpl:34
+msgid "Disable tracking for my account"
+msgstr ""
+"Protokollierung des Besucherverhaltens für meinen Benutzeraccount "
+"deaktivieren"
