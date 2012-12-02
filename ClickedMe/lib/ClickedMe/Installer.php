@@ -79,7 +79,6 @@ class ClickedMe_Installer extends Zikula_AbstractInstaller
         // Delete all user variables
         // # ClickedMe_waitUntil
         // # ClickedMe_trackingDisabled
-
         // Todo
         // ...
         
