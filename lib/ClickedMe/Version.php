@@ -26,7 +26,7 @@ class ClickedMe_Version extends Zikula_AbstractVersion
         $meta['displayname']    = $this->__('ClickedMe');
         $meta['description']    = $this->__("Show your users who visited their profile");
         $meta['url']            = $this->__('ClickedMe');
-        $meta['version']        = '3.0.0';
+        $meta['version']        = '3.0';
         return $meta;
     }
 }
